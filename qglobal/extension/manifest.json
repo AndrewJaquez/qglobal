@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Q-Global PDF Downloader",
+  "version": "1.0",
+  "description": "Download full PDFs from the Q-Global resource viewer",
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": [
+    "https://qglobal.pearsonassessments.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://qglobal.pearsonassessments.com/qg/platform/main/features/resource-library/resource-list/file-viewer-pdf/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Q-Global PDF Downloader"
+  }
+}

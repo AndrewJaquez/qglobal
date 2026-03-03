@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-Global PDF Downloader</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      width: 280px;
+      background: #f8f9fa;
+      color: #212529;
+    }
+    header {
+      background: #003057;
+      color: #fff;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    header span { font-weight: 400; opacity: 0.8; font-size: 12px; display: block; margin-top: 2px; }
+    .body { padding: 14px 16px; }
+    #status {
+      font-size: 13px;
+      color: #555;
+      min-height: 40px;
+      margin-bottom: 12px;
+      word-break: break-all;
+    }
+    #status .label { font-weight: 600; color: #003057; margin-bottom: 4px; font-size: 12px; }
+    #status .filename { font-size: 12px; color: #333; margin-top: 4px; }
+    #downloadBtn {
+      width: 100%;
+      background: #003057;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    #downloadBtn:hover:not(:disabled) { background: #004d8c; }
+    #downloadBtn:disabled { opacity: 0.6; cursor: default; }
+    .hint {
+      font-size: 11px;
+      color: #888;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Q-Global PDF Downloader
+    <span>Downloads the full PDF to your computer</span>
+  </header>
+  <div class="body">
+    <div id="status"><em>Checking current tab…</em></div>
+    <button id="downloadBtn" disabled>⬇ Download PDF</button>
+    <p class="hint">A floating button also appears on the viewer page.</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
